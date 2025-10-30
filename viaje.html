@@ -1,117 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💘 Nuestro Viaje - Evidencia 💘</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #FFC0CB;
-      font-family: "Poppins", sans-serif;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💘 Nuestro Viaje - Galería 💘</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #FFC0CB;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
-      align-items: center;
-      background-color: rgba(255,255,255,0.15);
-      padding: 40px;
-      border-radius: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      animation: fadeIn 2s ease;
-    }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
 
-    .photo-box {
-      width: 250px;
-      height: 250px;
-      background-color: rgba(255,255,255,0.3);
-      border: 2px dashed white;
-      border-radius: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.3em;
-      color: white;
-    }
+  /* corazones suaves */
+  .heart {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.4;
+  }
 
-    textarea {
-      width: 300px;
-      height: 200px;
-      border-radius: 15px;
-      border: none;
-      padding: 15px;
-      resize: none;
-      font-family: "Poppins", sans-serif;
-      font-size: 1em;
-      color: #FF69B4;
-      background-color: white;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      outline: none;
-    }
+  .h1 { top: 5%; left: 10%; }
+  .h2 { top: 15%; right: 15%; }
+  .h3 { bottom: 20%; left: 20%; }
+  .h4 { bottom: 10%; right: 10%; }
 
-    button {
-      margin-top: 30px;
-      background-color: white;
-      color: #FF69B4;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1em;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+  /* contenedor galería */
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
-    button:hover {
-      transform: scale(1.05);
-      background-color: #ffe6ef;
-    }
+  .photo-box {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255,255,255,0.2);
+    border: 2px dashed white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .photo-box.locked:hover {
+    transform: scale(1.05);
+  }
 
-    /* corazones suaves */
-    .heart {
-      position: absolute;
-      font-size: 25px;
-      opacity: 0.4;
-    }
+  /* imagen desbloqueada */
+  .photo-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: none;
+    object-fit: cover;
+  }
 
-    .h1 { top: 5%; left: 10%; }
-    .h2 { top: 15%; right: 15%; }
-    .h3 { bottom: 20%; left: 20%; }
-    .h4 { bottom: 10%; right: 10%; }
-  </style>
+  /* candado */
+  .lock-overlay {
+    position: absolute;
+    font-size: 2em;
+  }
+
+  /* área de texto editable */
+  textarea {
+    width: 300px;
+    height: 150px;
+    border-radius: 15px;
+    border: none;
+    padding: 15px;
+    resize: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    color: #FF69B4;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    outline: none;
+  }
+
+  button {
+    margin-top: 20px;
+    background-color: white;
+    color: #FF69B4;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    background-color: #ffe6ef;
+  }
+</style>
 </head>
 <body>
-  <div class="heart h1">💖</div>
-  <div class="heart h2">💞</div>
-  <div class="heart h3">💘</div>
-  <div class="heart h4">💕</div>
+<div class="heart h1">💖</div>
+<div class="heart h2">💞</div>
+<div class="heart h3">💘</div>
+<div class="heart h4">💕</div>
 
-  <h1>💞 Evidencia del viaje 💞</h1>
+<h1>💞 Galería del Viaje 💞</h1>
 
-  <div class="container">
-    <div class="photo-box">📸 Próximamente...</div>
-    <textarea placeholder="Escribe aquí lo valioso de esta evidencia..."></textarea>
+<div class="gallery-container">
+  <div class="photo-box locked" id="photoBox">
+    <span class="lock-overlay">🔒</span>
+    <img src="tu-foto.jpg" alt="Foto del viaje">
   </div>
-
-<a href="index.html"><button>Volver al inicio</button></a>
   
+  <textarea placeholder="Escribe aquí lo valioso de esta evidencia..."></textarea>
+</div>
+
+<button onclick="window.location.href='index.html'">Volver al inicio</button>
+
+<script>
+  const photoBox = document.getElementById('photoBox');
+  const lock = photoBox.querySelector('.lock-overlay');
+  const img = photoBox.querySelector('img');
+
+  photoBox.addEventListener('click', () => {
+    const password = prompt("Ingresa la contraseña para desbloquear:");
+    if(password === "1234") { // puedes cambiar la contraseña
+      lock.style.display = "none";
+      img.style.display = "block";
+      photoBox.classList.remove('locked');
+    } else {
+      alert("¡Contraseña incorrecta! 🔒");
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
