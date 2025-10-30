@@ -35,19 +35,24 @@
   .h3 { bottom: 20%; left: 20%; }
   .h4 { bottom: 10%; right: 10%; }
 
-  .write-box {
-    width: 90%;
-    max-width: 600px;
-    min-height: 300px;
-    background-color: white;
-    color: #FF1493;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
-    text-align: left;
+.write-box {
+  width: 90%;
+  max-width: 600px;
+  min-height: 300px;
+  background-color: white;   /* fondo blanco */
+  color: #FF1493;            /* letras rosas */
+  border-radius: 20px;
+  padding: 25px;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin: 50px auto;         /* centra horizontalmente y separa del borde */
+  text-align: center;         /* centra el texto dentro del div */
+  display: flex;
+  justify-content: center;    /* centra horizontalmente */
+  align-items: center;        /* centra verticalmente */
+  flex-direction: column;     /* mantiene el texto en columna */
+}
   }
 
   button {
@@ -75,10 +80,11 @@
   <div class="heart h3">💘</div>
   <div class="heart h4">💕</div>
 
+
   <h1>💌 Carta Especial 💌</h1>
 
   <div class="write-box">
-    Aquí va tu mensaje romántico para ella 💖
+   No, el tiempo no es la medida para este amor, porque nunca será suficiente para estar a tu lado, pero es el tiempo a tu lado el más hermoso que he tenido, porque aunque me resulta paradójica la impresión de la medida, se que cada instante construido contigo ha dejado honda huella, indeleble en el recuerdo. Pero la memoria es una laberinto insondable al que el tiempo condena con la pena del olvido, y aunque se que nada de lo que acurra en el futuro, puede cegar la luz que has traído a mi vida –resplandeciente luz de la esperanza- quiero detenerme un momento aquí, detenerme y hacer de esa honda huella en el recuerdo, algo tangible, prueba concreta de tu existencia y de este tiempo que hemos construido
   </div>
 
   <button onclick="window.location.href='index.html'">Volver al inicio</button>
