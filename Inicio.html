@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💘 Nuestro Viaje - Inicio 💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #FFC0CB;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 40px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+      background-color: white;
+      color: #FF69B4;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ffe6ef;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* corazones estáticos */
+    .heart {
+      position: absolute;
+      font-size: 25px;
+      opacity: 0.4;
+    }
+
+    .h1 { top: 10%; left: 15%; }
+    .h2 { top: 20%; right: 10%; }
+    .h3 { bottom: 15%; left: 25%; }
+    .h4 { bottom: 10%; right: 20%; }
+  </style>
+</head>
+<body>
+  <div class="heart h1">💖</div>
+  <div class="heart h2">💞</div>
+  <div class="heart h3">💘</div>
+  <div class="heart h4">💕</div>
+
+  <h1>💞 Nuestro viaje en diciembre 💞</h1>
+  <p>Una aventura cercana...</p>
+<a href="viaje.html">
+  <button>Empezar 💌</button>
+</a>
+</body>
+</html>
